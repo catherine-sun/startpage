@@ -21,7 +21,7 @@ class PageContent extends HTMLElement {
     render() {
         switch(this.data) {
             case "home":
-                this.root.innerHTML = `<h1>${this.data}</h1><home-dashboard/>`;
+                this.root.innerHTML = `<h1>${this.data}</h1><app-dashboard apps="${data.home.apps}"/>`;
                 break;
             default:
                 this.root.innerHTML = `<h1>${this.data}</h1>`;

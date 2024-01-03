@@ -1,0 +1,38 @@
+div.app_list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+}
+
+app-item {
+    display: flex;
+    flex-flow: column wrap;
+    align-items: center;
+    width: 80px;
+    margin: 8px 0px;
+}
+
+div.app_icon {
+    background-color: rgba(var(--purple), 0.8);
+    width: 56px;
+    height: 56px;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    margin: 4px 0px;
+    border-radius: 4px;
+
+    &:hover {
+        background-color: rgba(var(--purple), 0.5);
+    }
+}
+
+.label {
+    font-size: 12px;
+    padding: 2px;
+}
+
+i.large {
+    height: 38px;
+}

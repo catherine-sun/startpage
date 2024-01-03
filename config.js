@@ -1,12 +1,21 @@
 const data = {
     pages: [
-        "1",
+        "one",
         "home",
-        "2",
+        "two",
     ],
-    paginator_style: paginator_item.circle,
-    links: [
-        "https://twitter.com",
-        "https://old.reddit.com/"
-    ]
+    paginator_style: paginator_item.word,
+    open_in_a_new_window: true,
+    home: {
+        apps: [
+            "twitter",
+            "files",
+            "reddit",
+            "reddit",
+            "acorn",
+            "twitter",
+            "acorn",
+            "acorn",
+        ]
+    }
 }

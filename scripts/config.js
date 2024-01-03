@@ -49,7 +49,8 @@ data.pages.forEach((_, index) => {
 
 const components = {
     "page-content": PageContent,
-    "home-dashboard": Dashboard,
+    "app-dashboard": Dashboard,
+    "app-item": App,
 }
 
 for(const name in components) {
