@@ -1,4 +1,3 @@
-
 let paginator = document.getElementById("paginator");
 let page = document.getElementById("page");
 let page_id = data.pages.indexOf("home");
@@ -24,18 +23,20 @@ window.addEventListener("keydown", (e) => {
 const changePage = (n1, n2) => {
     document.getElementById("page" + n1).classList.remove("active");
     document.getElementById("page" + n2).classList.add("active");
-    page.setAttribute("data", "./pages/" + data.pages[n2] + ".html");
+    page.setAttribute("data", data.pages[n2]);
     page_id = n2;
 }
 
 data.pages.forEach((_, index) => {
     var elem = document.createElement("span");
     elem.setAttribute("id", "page" + index);
-    elem.classList.add(data.paginator_style);
 
-    if (data.paginator_style === paginator_item.word) {
+    if(icons[data.pages[index]]) {
         elem.innerText = data.pages[index];
-        icons[data.pages[index]] ? elem.classList.add("material-symbols-outlined") : null;
+        elem.classList.add(paginator_item.word, "material-symbols-outlined");
+    } else {
+        elem.innerText = data.paginator_style === paginator_item.word ? data.pages[index] : null;
+        elem.classList.add(data.paginator_style);
     }
 
     index == page_id ? elem.classList.add("active") : null;
@@ -45,3 +46,12 @@ data.pages.forEach((_, index) => {
         index == page_id ? null : changePage(page_id, index);
     })
 })
+
+const components = {
+    "page-content": PageContent,
+    "home-dashboard": Dashboard,
+}
+
+for(const name in components) {
+    customElements.define(name, components[name]);
+}

@@ -1,6 +1,6 @@
 @import url(https://meyerweb.com/eric/tools/css/reset/reset.css);
 @import url(https://fonts.googleapis.com/css?family=Victor+Mono);
-@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0);
+@import url(https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined);
 
 :root {
     font-family: "Victor Mono";
@@ -28,6 +28,14 @@ div#page_container {
     height: 95%;
 }
 
+page-content {
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 16px;
+}
+
 div#paginator {
     display: flex;
     align-items: center;
@@ -35,9 +43,8 @@ div#paginator {
     height: 5%;
 }
 
-object {
-    width: 100%;
-    height: 100%;
+h1 {
+    color: aliceblue;
 }
 
 span.circle {
@@ -66,7 +73,7 @@ span.word {
     padding: 4px 6px;
     font-size: 20px;
     font-weight: 600;
-    color: rgb(99, 91, 188);
+    color: rgb(71, 70, 82);
 
     &.active {
         color: rgb(112, 100, 240);

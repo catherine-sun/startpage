@@ -2,20 +2,21 @@
 <html>
     <head>
         <title>howdy</title>
-
         <link rel="stylesheet" href="./style.css">
         <link rel="icon" href="./assets/images/favicon.png">
-
-        <script src="./types.js"></script>
-        <script src="./config.js"></script>
     </head>
     <body>
         <div id="container">
             <div id="page_container">
-                <object id="page" type="text/html" data="./pages/home.html"></object>
+                <page-content id="page" data="home"></page-content>
             </div>
             <div id="paginator"></div>
         </div>
+
+        <script src="./types.js"></script>
+        <script src="./config.js"></script>
+        <script src="./scripts/page-content.js"></script>
+        <script src="./scripts/dashboard.js"></script>
         <script src="./scripts/config.js"></script>
     </body>
 </html>

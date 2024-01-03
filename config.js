@@ -4,5 +4,9 @@ const data = {
         "home",
         "2",
     ],
-    paginator_style: paginator_item.word,
+    paginator_style: paginator_item.circle,
+    links: [
+        "https://twitter.com",
+        "https://old.reddit.com/"
+    ]
 }
