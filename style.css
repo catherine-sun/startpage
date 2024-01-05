@@ -6,7 +6,6 @@
     font-family: "Victor Mono";
     --black: 26, 26, 27;
     --white: 246, 245, 242;
-    --purple: 141, 131, 255;
     --grey: 73, 71, 92;
 }
 
@@ -18,7 +17,7 @@ body {
     align-items: center;
 }
 
-div.container {
+div.outer-box {
     height: 70%;
     width: 65%;
     margin: 0 auto;
@@ -28,34 +27,54 @@ div.container {
     justify-content: space-between;
 }
 
-div.box {
+div.inner-box {
     height: 100%;
     margin: 10px;
-
-    &.left {
-        width: 360px;
-        min-width: 360px;
-    }
 
     &.right {
         width: 100%;
     }
-
 }
 
-div#page_container {
-    background-color: rgb(var(--white));
+.content-box {
     border-radius: 10px;
-    width: 100%;
-    height: 95%;
+    overflow: hidden;
+}
+
+div.page-wrapper {
+    width: 380px;
+    height: 550px;
+    overflow: hidden;
+    position: relative;
+    border-radius: 16px;
+    border: 2px solid rgba(var(--accent), 0.7);
+    box-sizing: border-box;
 }
 
 page-content {
+    position: absolute;
+    display: flex;
+    flex-flow: row nowrap;
+
+    &:not(.loading) {
+        transition: transform 0.5s ease-in-out;
+    }
+}
+
+div.page {
     display: inline-block;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    padding: 16px 20px;
+    background-color: rgb(var(--white));
+    background-size: cover;
+    width: 380px;
+    height: 550px;
+}
+
+div.page::before {
+    all: inherit;
+    display: inline-block;
+    filter: brightness(0.8);
+    content: "";
+    position: absolute;
 }
 
 div#paginator {
@@ -63,6 +82,7 @@ div#paginator {
     align-items: center;
     justify-content: center;
     height: 5%;
+    margin: 4px;
 }
 
 span.circle {
@@ -76,7 +96,7 @@ span.circle {
     width: 10px;
 
     &.active {
-        background-color: rgb(var(--purple));
+        background-color: rgb(var(--accent));
         height: 12px;
         width: 12px;
     }
@@ -94,14 +114,14 @@ span.word {
     color: rgb(var(--grey));
 
     &.active {
-        color: rgb(var(--purple));
+        color: rgb(var(--accent));
         text-decoration: underline;
         text-decoration-thickness: 2px;
     }
 
     &:hover {
-        background-color: rgba(var(--purple), 0.3);
-        color: rgb(var(--purple));
+        background-color: rgba(var(--accent), 0.3);
+        color: rgb(var(--accent));
     }
 
     &:not(.material-symbols-outlined) {

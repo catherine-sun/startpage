@@ -1,7 +1,6 @@
 class Dashboard extends HTMLElement {
 
     load = [
-        "https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css",
         "./styles/dashboard.css"
     ];
 
@@ -15,15 +14,7 @@ class Dashboard extends HTMLElement {
             <style>
                 ${this.load.map((url) => `@import url(${url});`).join("")}
             </style>
-            <div class="app_list">
-                ${this.apps.map((name) => `
-                    <app-item
-                        name="${name}"
-                        url="${apps[name].url}"
-                        icon="${apps[name].icon}"
-                    ></app-item>
-                `).join("")}
-            </div>
+            ${this.apps.map((name) => `<app-item name="${name}"></app-item>`).join("")}
         `;
     }
 }
@@ -34,8 +25,10 @@ class App extends HTMLElement {
         super();
 
         this.name = this.getAttribute("name");
-        this.url = this.getAttribute("url");
-        this.icon = this.getAttribute("icon");
+        this.url = apps[this.name].url;
+        this.icon = apps[this.name].icon;
+        this.fgcol = apps[this.name].fgcol ?? "currentColor";
+        this.bgcol = apps[this.name].bgcol;
 
         this.addEventListener("click", () => {
             if(data.open_in_a_new_window) {
@@ -44,12 +37,26 @@ class App extends HTMLElement {
                 window.location = this.url;
             }
         });
+
+        this.isHardcoded = this.icon.match("^\.\/assets\/images\/.*\.svg$");
     }
 
     connectedCallback() {
         this.innerHTML = `
-            <div class="app_icon">
-                <i class="large" style="content: url(./assets/images/${this.icon}.svg);"></i>
+            <div
+                class="app-icon"
+                ${this.bgcol ? `style="background-color: ${this.bgcol};"` : ""}
+            >
+                <i ${this.isHardcoded ?`
+                    class="large"
+                    style="background: url(${this.icon}) no-repeat center center / contain;;"
+                ` : `
+                    class="large mask"
+                    style="
+                        mask-image: url(${this.icon});
+                        background-color: ${this.fgcol};
+                    "
+                `}></i>
             </div>
             <span class="label">${this.name}</span>
         `;

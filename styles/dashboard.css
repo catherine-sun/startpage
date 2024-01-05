@@ -1,19 +1,22 @@
-div.app_list {
+app-dashboard {
     display: flex;
     flex-flow: row wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
+    margin: 20px 0px;
+    position: relative;
+    box-sizing: border-box;
+    padding: 16px 20px;
 }
 
 app-item {
     display: flex;
     flex-flow: column wrap;
     align-items: center;
-    width: 80px;
-    margin: 8px 0px;
+    width: 85px;
+    margin: 15px 0px;
 }
 
-div.app_icon {
-    background-color: rgba(var(--purple), 0.8);
+div.app-icon {
     width: 56px;
     height: 56px;
     display: flex;
@@ -21,18 +24,38 @@ div.app_icon {
     justify-content: center;
     align-items: center;
     margin: 4px 0px;
-    border-radius: 4px;
+    border-radius: 10px;
+    background-color: rgb(var(--accent));
 
-    &:hover {
-        background-color: rgba(var(--purple), 0.5);
+    i.mask {
+        mask-size: contain;
     }
+}
+
+div.app-icon::before {
+    width: inherit;
+    height: inherit;
+    border-radius: 12px;
+    position: absolute;
+    content: "";
+    border: 0px solid rgb(var(--accent));
+    box-shadow: 0px 0px 5px rgba(var(--black), 0.6);
+    transition: all 0.2s ease-in-out;
+}
+
+div.app-icon:hover:before {
+    border: 2px solid rgb(var(--accent));
+    box-shadow: 0px 0px 10px rgba(var(--accent), 0.8);
 }
 
 .label {
     font-size: 12px;
     padding: 2px;
+    color: rgb(var(--white));
+    text-shadow: 0px 0px 8px rgb(var(--black));
 }
 
 i.large {
     height: 38px;
+    width: 38px;
 }

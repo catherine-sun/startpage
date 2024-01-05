@@ -3,14 +3,17 @@ let page = document.getElementById("page");
 let page_id = data.pages.indexOf("home");
 
 window.addEventListener("keydown", (e) => {
+    if (document.activeElement !== document.body) return;
     var page_id2;
     switch(e.key) {
         case "ArrowLeft":
         case "j":
+        case "a":
             page_id2 = page_id - 1 < 0 ? data.pages.length - 1 : page_id - 1;
             break;
         case "ArrowRight":
         case "l":
+        case "d":
         case " ":
             page_id2 = page_id + 1 == data.pages.length ? 0 : page_id + 1;
             break;
