@@ -58,7 +58,7 @@ class App extends HTMLElement {
                     "
                 `}></i>
             </div>
-            <span class="label">${this.name}</span>
+            <div class="label">${this.name}</div>
         `;
     }
 }

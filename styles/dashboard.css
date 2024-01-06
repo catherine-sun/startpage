@@ -27,6 +27,10 @@ div.app-icon {
     border-radius: 10px;
     background-color: rgb(var(--accent));
 
+    &:hover {
+        cursor: pointer;
+    }
+
     i.mask {
         mask-size: contain;
     }
@@ -49,10 +53,16 @@ div.app-icon:hover:before {
 }
 
 .label {
-    font-size: 12px;
-    padding: 2px;
+    font-size: 11px;
+    font-weight: 100;
+    width: 56px;
+    padding: 4px;
     color: rgb(var(--white));
     text-shadow: 0px 0px 8px rgb(var(--black));
+    text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
 }
 
 i.large {

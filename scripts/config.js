@@ -1,6 +1,6 @@
 let paginator = document.getElementById("paginator");
-let page = document.getElementById("page");
 let page_id = data.pages.indexOf("home");
+let page_content = document.getElementById("page-content");
 
 window.addEventListener("keydown", (e) => {
     if (document.activeElement !== document.body) return;
@@ -26,7 +26,7 @@ window.addEventListener("keydown", (e) => {
 const changePage = (n1, n2) => {
     document.getElementById("page" + n1).classList.remove("active");
     document.getElementById("page" + n2).classList.add("active");
-    page.setAttribute("data", data.pages[n2]);
+    page_content.setAttribute("data-content", data.pages[n2]);
     page_id = n2;
 }
 
@@ -54,6 +54,8 @@ const components = {
     "page-content": PageContent,
     "app-dashboard": Dashboard,
     "app-item": App,
+    "greeting-loop": GreetingLoop,
+    "greeting-text": GreetingText,
 }
 
 for(const name in components) {

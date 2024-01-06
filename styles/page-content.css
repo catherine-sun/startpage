@@ -1,0 +1,24 @@
+page-content {
+    position: absolute;
+    display: flex;
+    flex-flow: row nowrap;
+
+    &:not(.loading) {
+        transition: transform 0.5s ease-in-out;
+    }
+}
+
+.page {
+    display: inline-block;
+    background-color: rgb(var(--white));
+    background-size: cover;
+    width: 380px;
+    height: 550px;
+
+    &::before {
+        all: inherit;
+        filter: brightness(0.8);
+        content: "";
+        position: absolute;
+    }
+}

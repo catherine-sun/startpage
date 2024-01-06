@@ -23,12 +23,18 @@ const apps = {
     "acorn": {
         url: "https://www.acorn.utoronto.ca/",
         icon: "./assets/images/acorn.svg",
-        bgcol: "rgb(188, 207, 232)",
+        bgcol: "rgb(220, 230, 240)",
     },
     "files": {
         url: "https://drive.google.com/drive/my-drive",
         icon: "https://api.iconify.design/uim/google-drive-alt.svg",
         fgcol: "rgb(22, 93, 7)",
-        bgcol: "rgb(174, 192, 215)",
+        bgcol: "rgb(220, 230, 240)",
     },
+    "github": {
+        url: "https://github.com/dashboard",
+        icon: "https://api.iconify.design/bi/github.svg",
+        fgcol: "rgb(220, 230, 240)",
+        bgcol: "rgb(21, 42, 86)",
+    }
 }
