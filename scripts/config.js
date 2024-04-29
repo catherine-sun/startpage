@@ -43,6 +43,12 @@ data.pages.forEach((_, index) => {
     }
 
     index == page_id ? elem.classList.add("active") : null;
+    elem.setAttribute("tabindex", "0");
+    elem.addEventListener("keydown", (e) => {
+        if (e.key === "Enter" || e.key == " ") {
+            changePage(page_id, e.target.id.substr(-1));
+        }
+    })
     paginator.appendChild(elem);
 
     elem.addEventListener("click", () => {
@@ -52,8 +58,8 @@ data.pages.forEach((_, index) => {
 
 const components = {
     "page-content": PageContent,
-    "app-dashboard": Dashboard,
-    "app-item": App,
+    "app-dashboard": AppDashboard,
+    "app-item": AppItem,
     "greeting-loop": GreetingLoop,
     "greeting-text": GreetingText,
 }

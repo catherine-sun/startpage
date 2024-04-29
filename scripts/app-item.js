@@ -1,25 +1,4 @@
-class Dashboard extends HTMLElement {
-
-    load = [
-        "./styles/dashboard.css"
-    ];
-
-    constructor() {
-        super();
-        this.apps = this.getAttribute("apps").split(",");
-    }
-
-    connectedCallback() {
-        this.innerHTML = `
-            <style>
-                ${this.load.map((url) => `@import url(${url});`).join("")}
-            </style>
-            ${this.apps.map((name) => `<app-item name="${name}"></app-item>`).join("")}
-        `;
-    }
-}
-
-class App extends HTMLElement {
+class AppItem extends HTMLElement {
 
     constructor() {
         super();
@@ -30,13 +9,12 @@ class App extends HTMLElement {
         this.fgcol = apps[this.name].fgcol ?? "currentColor";
         this.bgcol = apps[this.name].bgcol;
 
-        this.addEventListener("click", () => {
-            if(data.open_in_a_new_window) {
-                window.open(this.url);
-            } else {
-                window.location = this.url;
+        this.addEventListener("click", this.open);
+        this.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                this.open();
             }
-        });
+        })
 
         this.isHardcoded = this.icon.match("^\.\/assets\/images\/.*\.svg$");
     }
@@ -46,6 +24,7 @@ class App extends HTMLElement {
             <div
                 class="app-icon"
                 ${this.bgcol ? `style="background-color: ${this.bgcol};"` : ""}
+                tabindex="0"
             >
                 <i ${this.isHardcoded ?`
                     class="large"
@@ -60,5 +39,13 @@ class App extends HTMLElement {
             </div>
             <div class="label">${this.name}</div>
         `;
+    }
+
+    open() {
+        if(data.open_in_a_new_window) {
+            window.open(this.url);
+        } else {
+            window.location = this.url;
+        }
     }
 }

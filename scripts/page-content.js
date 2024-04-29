@@ -10,6 +10,16 @@ class PageContent extends HTMLElement {
         this.active = "home";
         this.default_accent = "141, 131, 255";
         this.classList.add("loading");
+        this.addEventListener("transitionstart", (e) => {
+            if (e.target instanceof PageContent) {
+                document.querySelectorAll(".page").forEach((page) => page.classList.add("moving"))
+            }
+        })
+        this.addEventListener("transitionend", (e) => {
+            if (e.target instanceof PageContent) {
+                document.querySelectorAll(".page").forEach((page) => page.classList.remove("moving"))
+            }
+        })
     }
 
     connectedCallback() {
@@ -52,7 +62,6 @@ class PageContent extends HTMLElement {
         this.style.transform = `translateX(-${active_id * 100 / data.pages.length}%)`
 
         document.querySelector("greeting-loop").setAttribute("data-content", this.active);
-        console.log(this.active)
     }
 
     updateAccent(a) {

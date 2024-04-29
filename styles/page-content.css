@@ -21,4 +21,8 @@ page-content {
         content: "";
         position: absolute;
     }
+
+    &:not(.active):not(.moving) {
+        visibility: hidden;
+    }
 }
