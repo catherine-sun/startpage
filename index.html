@@ -4,20 +4,21 @@
         <title>howdy</title>
         <link rel="icon" href="./assets/images/favicon.png">
         <link rel="stylesheet" href="./style.css">
-        <link rel="stylesheet" href="./styles/timetable.css">
+        <link rel="stylesheet" href="./styles/page-content.css">
+        <link rel="stylesheet" href="./styles/timetable-week.css">
     </head>
     <body>
         <div class="outer-box">
             <div class="column left">
                 <div class="page-wrapper">
                     <page-content id="page-content" data-content="home"></page-content>
-                    <div 
+                    <div
                         id="art-credit"
                         class="icon-button"
                         data-content="art by @101Neg"
                         tabindex="0"
-                        onclick="window.open('https://www.pixiv.net/en/artworks/96769333', '_blank')"
-                        onkeydown="handleKeyDown(event, () => window.open('https://www.pixiv.net/en/artworks/96769333', '_blank'))"
+                        onclick="openUrl('https://www.pixiv.net/en/artworks/96769333')"
+                        onkeydown="handleKeyDown(event, () => openUrl('https://www.pixiv.net/en/artworks/96769333'))"
                     >
                         <object type="image/svg+xml" data="./assets/images/info-icon.svg"></object>
                     </div>
@@ -26,48 +27,7 @@
             </div>
             <div class="column right">
                 <div id="wrapper">
-                    <!-- TODO: let user pick calendar -->
-                    <div class="outer">
-                        <div class="inner">
-                            <div class="header">
-                                <h2>Mon</h2>
-                                <h2>Tue</h2>
-                                <h2>Wed</h2>
-                                <h2>Thu</h2>
-                                <h2>Fri</h2>
-                            </div>
-                            <div class="grid">
-                                <div class="gridlines">
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                    <div></div>
-                                </div>
-                                <timetable-day dayindex="0"></timetable-day>
-                                <timetable-day dayindex="1"></timetable-day>
-                                <timetable-day dayindex="2"></timetable-day>
-                                <timetable-day dayindex="3"></timetable-day>
-                                <timetable-day dayindex="4"></timetable-day>
-                            </div>
-                            <div 
-                                class="icon-button"
-                                data-content="open full calendar"
-                                tabindex="0"
-                                onclick="window.open('https://calendar.google.com', '_blank')"
-                                onkeydown="handleKeyDown(event, () => window.open('https://calendar.google.com', '_blank'))"
-                            >
-                                <object type="image/svg+xml" data="./assets/images/open-external-link-icon.svg"></object>
-                            </div>
-                        </div>
-                    </div>
+                    <timetable-week calendar="s24"></timetable-week>
                 </div>
                 <div id="greeting-wrapper">
                     <greeting-loop data-content="home"></greeting-loop>
@@ -81,11 +41,10 @@
 
         <!-- components -->
         <script src="./scripts/page-content.js"></script>
-        <script src="./scripts/app-dashboard.js"></script>
         <script src="./scripts/app-item.js"></script>
         <script src="./scripts/greeting-loop.js"></script>
         <script src="./scripts/greeting-text.js"></script>
-        <script src="./scripts/timetable-day.js"></script>
+        <script src="./scripts/timetable-week.js"></script>
 
         <!-- main -->
         <script src="./scripts/config.js"></script>

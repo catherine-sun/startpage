@@ -1,16 +1,19 @@
-@import url('https://meyerweb.com/eric/tools/css/reset/reset.css');
-@import url('https://fonts.googleapis.com/css?family=Victor+Mono');
-@import url('https://fonts.cdnfonts.com/css/ocr-a-std');
-@import url('https://fonts.cdnfonts.com/css/freecam2');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
+@import url("https://meyerweb.com/eric/tools/css/reset/reset.css");
+@import url("https://fonts.googleapis.com/css?family=Victor+Mono");
+@import url("https://fonts.cdnfonts.com/css/ocr-a-std");
+@import url("https://fonts.cdnfonts.com/css/freecam2");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined");
 
 :root {
     font-family: "OCR A Std";
     --black: 16, 17, 21;
     --white: 246, 245, 242;
     --grey: 73, 71, 92;
+    --light-grey: 218, 220, 224;
+    --dark-grey: 43, 43, 43;
     --bg: 24, 25, 38;
     --fg: 41, 44, 72;
+    --accent: 141, 131, 255;
 }
 
 body {
@@ -19,6 +22,7 @@ body {
     height: 100vh;
     display: flex;
     align-items: center;
+    overflow: auto;
 }
 
 .outer-box {
@@ -65,6 +69,8 @@ body {
     justify-content: center;
     height: 5%;
     margin: 4px;
+    width: 100%;
+    overflow: auto;
 
     span {
         margin: 8px;
@@ -118,10 +124,13 @@ body {
 }
 
 #wrapper {
-    height: 550px;
     width: 100%;
+    height: 550px;
+    font-size: 14px;
+    font-family: "Victor Mono";
     border-radius: 8px;
     border: 2px solid rgb(var(--black));
+    background-color: rgb(var(--white));
     filter: brightness(0.85);
     z-index: 1;
 }
@@ -140,9 +149,8 @@ body {
         rgba(var(--black), 1) 90%,
         rgba(var(--black), 0) 100%
     );
-    background-color: rgb(var(--fg));
-
     opacity: 0.4;
+    background-color: rgb(var(--fg));
     transition: opacity 0.3s ease-in-out;
 
     &:hover {
@@ -171,13 +179,13 @@ greeting-loop {
 }
 
 .looping[data-before=true]::before {
-    content: ' ' var(--before) ' ';
+    content: " " var(--before) " ";
     position: relative;
     top: 3px;
 }
 
 .looping[data-after=true]::after {
-    content: ' ' var(--after) ' ';
+    content: " " var(--after) " ";
     position: relative;
     top: 3px;
 }
@@ -189,28 +197,28 @@ greeting-loop {
 
 .icon-button {
     position: absolute;
+    display: inline-block;
     right: 0;
     bottom: 0;
     margin: 10px;
-    display: inline-block;
-    background-color: rgba(var(--accent), 0.7);
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.6);
-    border-radius: 8px;
-    opacity: 0.6;
     padding: 10px;
-    
-    & object {
-        width: 16px;
-        height: 16px;
-    }
     width: 16px;
     height: 16px;
+    opacity: 0.6;
+    border-radius: 8px;
+    background-color: rgba(var(--accent), 0.7);
+    border: 2px solid rgb(var(--accent));
     overflow: hidden;
     text-overflow: clip;
     white-space: nowrap;
     max-width: max-content;
-    
     transition: all .5s ease-in-out;
+
+    object {
+        width: 16px;
+        height: 16px;
+    }
+
     &[data-content]:not([data-content=""])::after {
         content: attr(data-content);
         line-height: 16px;

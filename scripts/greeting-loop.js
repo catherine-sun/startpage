@@ -4,15 +4,15 @@ class GreetingLoop extends HTMLElement {
     constructor() {
         super();
     }
-    
+
     connectedCallback() {
-        this.config = data.home;
+        this.config = pages.home;
         this.render();
     }
 
     attributeChangedCallback(name, _, newValue) {
-        if(name !== "data-content") { return; }
-        this.config = data[newValue];
+        if (name !== "data-content") return;
+        this.config = pages[newValue];
         this.render();
     }
 
@@ -31,16 +31,14 @@ class GreetingLoop extends HTMLElement {
         const date = new Date();
         var greeting = "";
 
-        if(this.config.include_datetime_in_greeting) {
+        if (this.config.include_datetime_in_greeting) {
             greeting += new Intl.DateTimeFormat(this.config.datetime_format.locale, this.config.datetime_format.options).format(date);
             greeting += this.config.separator.between ? `\t${this.config.separator.between}\t` : "\t";
         }
 
         let hour = date.getHours();
         greeting += this.config.greetings?.map((g) => {
-            if(g.start <= hour && hour < g.end) {
-                return g.msg;
-            }
+            if (g.start <= hour && hour < g.end) return g.msg;
         }).join("");
         return greeting;
     }

@@ -9,8 +9,8 @@ class AppItem extends HTMLElement {
         this.fgcol = apps[this.name].fgcol ?? "currentColor";
         this.bgcol = apps[this.name].bgcol;
 
-        this.addEventListener("click", () => this.open(this.url));
-        this.addEventListener("keydown", (e) => handleKeyDown(e, () => this.open(this.url)))
+        this.addEventListener("click", () => openUrl(this.url));
+        this.addEventListener("keydown", (e) => handleKeyDown(e, () => openUrl(this.url)));
 
         this.isHardcoded = this.icon.match("^\.\/assets\/images\/.*\.svg$");
     }
@@ -24,7 +24,7 @@ class AppItem extends HTMLElement {
             >
                 <i ${this.isHardcoded ?`
                     class="large"
-                    style="background: url(${this.icon}) no-repeat center center / contain;;"
+                    style="background: url(${this.icon}) no-repeat center center / contain;"
                 ` : `
                     class="large mask"
                     style="
@@ -35,13 +35,5 @@ class AppItem extends HTMLElement {
             </div>
             <div class="label">${this.name}</div>
         `;
-    }
-
-    open(url) {
-        if(data.open_in_a_new_window) {
-            window.open(url);
-        } else {
-            window.location = url;
-        }
     }
 }

@@ -1,0 +1,135 @@
+.timetable-header {
+    display: flex;
+    border-bottom: rgb(198, 201, 208) 1px solid;
+
+    h2 {
+        text-align: center;
+        width: 100%;
+        margin: 8px 0px;
+        line-height: 32px;
+        font-size: 11px;
+        font-weight: 500;
+        letter-spacing: 0.8px;
+        color: rgb(var(--grey));
+    }
+}
+
+.timetable-grid {
+    display: flex;
+    overflow: hidden;
+}
+
+.timetable-lines {
+    width: 100%;
+
+    div {
+        width: 100%;
+        height: 39.3px;
+        content: "";
+        pointer-events: none;
+        border-bottom: 1px solid rgb(var(--light-grey));
+    }
+}
+
+.timetable-day {
+    width: 20%;
+    height: calc(100% - 49px);
+    position: absolute;
+
+    &::before {
+        display: inline-block;
+        height: 100%;
+        content: "";
+        border-right: rgb(var(--light-grey)) 1px solid;
+    }
+
+    &:nth-child(2)::before {
+        border-right: none;
+    }
+
+    &:nth-child(3) {
+        left: 20%;
+    }
+
+    &:nth-child(4) {
+        left: 40%;
+    }
+
+    &:nth-child(5) {
+        left: 60%;
+    }
+
+    &:nth-child(6) {
+        left: 80%;
+    }
+}
+
+.events-wrapper {
+    position: absolute;
+    height: 100%;
+    width: calc(100% - 12px);
+    top: -318px;
+}
+
+.event {
+    width: 100%;
+    z-index: 5;
+    position: absolute;
+    border-radius: 4px;
+    margin-left: 3px;
+    padding: 0px 3px;
+    transition: all 0.3s ease-in-out;
+
+    &:focus, &:hover {
+        border: solid 2px;
+        box-shadow: 0px 0px 5px rgba(var(--black), 0.6);
+        transform: scale(1.1);
+        z-index: 6;
+    }
+}
+
+.event-body {
+    padding: 2px;
+    color: rgb(var(--black));
+    font-size: 12px;
+    letter-spacing: 0.1px;
+    line-height: 15px;
+    text-align: left;
+    text-overflow: clip;
+    white-space: nowrap;
+    word-wrap: break-word;
+    overflow: hidden;
+
+    :not(strong) {
+        @media screen and (max-width: 1024px) {
+            display: none;
+        }
+    }
+
+    strong {
+        font-weight: bold;
+    }
+}
+
+.tooltip {
+    width: 140%;
+    min-width: 120px;
+    padding: 10px;
+    border-radius: 5px;
+    color: rgb(var(--white));
+    background-color: rgb(var(--dark-grey));
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+    font-size: 12px;
+    line-height: 18px;
+    opacity: 0;
+    overflow: auto;
+    display: none;
+    transform: translate3d(0,6px,0);
+    transition: all .2s .1s ease-in-out;
+
+    &.active {
+        display: inline-block;
+        opacity: 1;
+        transform: translate3d(0,0,0);
+    }
+}

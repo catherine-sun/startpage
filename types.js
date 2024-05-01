@@ -36,13 +36,12 @@ const apps = {
         icon: "https://api.iconify.design/bi/github.svg",
         fgcol: "rgb(220, 230, 240)",
         bgcol: "rgb(21, 42, 86)",
-    }
+    },
 }
 
 const timetable_colours = {
-    'Banana': 'background-color: rgb(251, 215, 91); border-color: rgb(197, 152, 0);',
-    'Tangerine': 'background-color: rgb(255, 184, 120); border-color: rgb(207, 121, 44);',
-    'Sage': 'background-color: rgb(122, 231, 191); border-color: rgb(50, 180, 132);',
-    'Grape': 'background-color: rgb(219, 173, 255); border-color: rgb(164, 109, 207);'
+    "Banana": "background-color: rgb(251, 215, 91); border-color: rgb(197, 152, 0);",
+    "Tangerine": "background-color: rgb(255, 184, 120); border-color: rgb(207, 121, 44);",
+    "Sage": "background-color: rgb(122, 231, 191); border-color: rgb(50, 180, 132);",
+    "Grape": "background-color: rgb(219, 173, 255); border-color: rgb(164, 109, 207);",
 }
-

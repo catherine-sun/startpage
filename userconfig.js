@@ -1,4 +1,4 @@
-const data = {
+const settings = {
     pages: [
         "study",
         "home",
@@ -6,6 +6,9 @@ const data = {
     ],
     paginator_style: paginator_item.word,
     open_in_a_new_window: true,
+}
+
+const pages = {
     home: {
         apps: [
             "twitter",
@@ -16,7 +19,7 @@ const data = {
         wallpaper: "./assets/images/penguin-shower-101Neg.jpg",
         artist: {
             name: "@101Neg",
-            src: "https://www.pixiv.net/en/artworks/96769333"
+            src: "https://www.pixiv.net/en/artworks/96769333",
         },
         include_datetime_in_greeting: true,
         datetime_format: {
@@ -88,7 +91,7 @@ const data = {
         wallpaper: "./assets/images/hollowknight-mochii_lisa.jpg",
         artist: {
             name: "@mochii_lisa",
-            src: "https://twitter.com/mochii_lisa/status/1742626752751448357/photo/1"
+            src: "https://twitter.com/mochii_lisa/status/1742626752751448357/photo/1",
         },
         accent: "99, 192, 135",
         include_datetime_in_greeting: true,
@@ -114,80 +117,81 @@ const data = {
         greetings: [
         ],
     },
-    calendars: {
-        s24: [
-            [],
-            [
-                {
-                    'style': 'top: 359px; height: 118px;',
-                    'colour': 'Banana',
-                    'title': 'LGGA82Y3 LEC01',
-                    'time': '9am – 12pm', 
-                    'location': 'KW 120'
-                },
-                {
-                    'style':  'top: 479px; height: 78px;',
-                    'colour': 'Tangerine',
-                    'title': 'CSCC63H3 LEC01',
-                    'time': '12 – 2pm', 
-                    'location': 'HL B101'
-                },
-                {
-                    'style':  'top: 599px; height: 78px;',
-                    'colour': 'Sage',
-                    'title': 'CSCC09H3 PRA0002',
-                    'time': '3 – 5pm', 
-                    'location': 'BV 473'
-                },
-            ],
-            [
-                {
-                    'style':  'top: 399px; height: 78px;',
-                    'colour': 'Grape',
-                    'title': 'CSCD03H3 LEC01',
-                    'time': '10am – 12pm', 
-                    'location': 'IC 200'
-                },
-                {
-                    'style':  'top: 539px; height: 18px;',
-                    'colour': 'Grape',
-                    'title': 'CSCD03H3 TUT0002',
-                    'time': '1:30pm', 
-                    'location': 'IC 308'
-                },
-            ],
-            [
-                {
-                    'style':  'top: 559px; height: 38px;',
-                    'colour': 'Tangerine',
-                    'title': 'CSCC63H3 LEC01',
-                    'time': '2pm', 
-                    'location': 'HL B101'
-                },
-                {
-                    'style':  'top: 599px; height: 38px;',
-                    'colour': 'Tangerine',
-                    'title': 'CSCC63H3 LEC01',
-                    'time': '3pm', 
-                    'location': 'IC 326'
-                },
-                {
-                    'style':  'top: 679px; height: 78px;',
-                    'colour': 'Sage',
-                    'title': 'CSCC09H3 LEC01',
-                    'time': '5 – 7pm', 
-                    'location': 'IC 220'
-                },
-            ],
-            [
-                {
-                    'style':  'top: 359px; height: 118px;',
-                    'colour': 'Banana',
-                    'title': 'LGGA82Y3 LEC01',
-                    'time': '9am – 12pm', 
-                    'location': 'KW 264'
-                },
-            ]
-        ]
-    }
+}
+
+const calendars = {
+    s24: [
+        [],
+        [
+            {
+                "style": "top: 359px; height: 118px;",
+                "colour": "Banana",
+                "title": "LGGA82Y3 LEC01",
+                "time": "9am – 12pm",
+                "location": "KW 120",
+            },
+            {
+                "style":  "top: 479px; height: 78px;",
+                "colour": "Tangerine",
+                "title": "CSCC63H3 LEC01",
+                "time": "12 – 2pm",
+                "location": "HL B101",
+            },
+            {
+                "style":  "top: 599px; height: 78px;",
+                "colour": "Sage",
+                "title": "CSCC09H3 PRA0002",
+                "time": "3 – 5pm",
+                "location": "BV 473",
+            },
+        ],
+        [
+            {
+                "style":  "top: 399px; height: 78px;",
+                "colour": "Grape",
+                "title": "CSCD03H3 LEC01",
+                "time": "10am – 12pm",
+                "location": "IC 200",
+            },
+            {
+                "style":  "top: 539px; height: 18px;",
+                "colour": "Grape",
+                "title": "CSCD03H3 TUT0002",
+                "time": "1:30pm",
+                "location": "IC 308",
+            },
+        ],
+        [
+            {
+                "style":  "top: 559px; height: 38px;",
+                "colour": "Tangerine",
+                "title": "CSCC63H3 LEC01",
+                "time": "2pm",
+                "location": "HL B101",
+            },
+            {
+                "style":  "top: 599px; height: 38px;",
+                "colour": "Tangerine",
+                "title": "CSCC63H3 LEC01",
+                "time": "3pm",
+                "location": "IC 326",
+            },
+            {
+                "style":  "top: 679px; height: 78px;",
+                "colour": "Sage",
+                "title": "CSCC09H3 LEC01",
+                "time": "5 – 7pm",
+                "location": "IC 220",
+            },
+        ],
+        [
+            {
+                "style":  "top: 359px; height: 118px;",
+                "colour": "Banana",
+                "title": "LGGA82Y3 LEC01",
+                "time": "9am – 12pm",
+                "location": "KW 264",
+            },
+        ],
+    ],
 }

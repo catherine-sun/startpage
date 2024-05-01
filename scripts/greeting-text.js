@@ -5,7 +5,7 @@ class GreetingText extends HTMLElement {
         this.before = this.getAttribute("before");
         this.after = this.getAttribute("after");
     }
-    
+
     connectedCallback() {
         this.update("before", this.before);
         this.update("after", this.after);
