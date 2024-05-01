@@ -9,12 +9,8 @@ class AppItem extends HTMLElement {
         this.fgcol = apps[this.name].fgcol ?? "currentColor";
         this.bgcol = apps[this.name].bgcol;
 
-        this.addEventListener("click", this.open);
-        this.addEventListener("keydown", (e) => {
-            if (e.key === "Enter" || e.key === " ") {
-                this.open();
-            }
-        })
+        this.addEventListener("click", () => this.open(this.url));
+        this.addEventListener("keydown", (e) => handleKeyDown(e, () => this.open(this.url)))
 
         this.isHardcoded = this.icon.match("^\.\/assets\/images\/.*\.svg$");
     }
@@ -41,11 +37,11 @@ class AppItem extends HTMLElement {
         `;
     }
 
-    open() {
+    open(url) {
         if(data.open_in_a_new_window) {
-            window.open(this.url);
+            window.open(url);
         } else {
-            window.location = this.url;
+            window.location = url;
         }
     }
 }

@@ -17,7 +17,6 @@ page-content {
 
     &::before {
         all: inherit;
-        filter: brightness(0.8);
         content: "";
         position: absolute;
     }

@@ -78,7 +78,7 @@ const data = {
             "files",
         ],
         wallpaper: "./assets/images/hollowknight-mochii_lisa.jpg",
-        accent: "97, 141, 114",
+        accent: "99, 192, 135",
         include_datetime_in_greeting: true,
         datetime_format: {
             locale: undefined,
@@ -102,4 +102,80 @@ const data = {
         greetings: [
         ],
     },
+    calendars: {
+        s24: [
+            [],
+            [
+                {
+                    'style': 'top: 359px; height: 118px;',
+                    'colour': 'Banana',
+                    'title': 'LGGA82Y3 LEC01',
+                    'time': '9am – 12pm', 
+                    'location': 'KW 120'
+                },
+                {
+                    'style':  'top: 479px; height: 78px;',
+                    'colour': 'Tangerine',
+                    'title': 'CSCC63H3 LEC01',
+                    'time': '12 – 2pm', 
+                    'location': 'HL B101'
+                },
+                {
+                    'style':  'top: 599px; height: 78px;',
+                    'colour': 'Sage',
+                    'title': 'CSCC09H3 PRA0002',
+                    'time': '3 – 5pm', 
+                    'location': 'BV 473'
+                },
+            ],
+            [
+                {
+                    'style':  'top: 399px; height: 78px;',
+                    'colour': 'Grape',
+                    'title': 'CSCD03H3 LEC01',
+                    'time': '10am – 12pm', 
+                    'location': 'IC 200'
+                },
+                {
+                    'style':  'top: 539px; height: 18px;',
+                    'colour': 'Grape',
+                    'title': 'CSCD03H3 TUT0002',
+                    'time': '1:30pm', 
+                    'location': 'IC 308'
+                },
+            ],
+            [
+                {
+                    'style':  'top: 559px; height: 38px;',
+                    'colour': 'Tangerine',
+                    'title': 'CSCC63H3 LEC01',
+                    'time': '2pm', 
+                    'location': 'HL B101'
+                },
+                {
+                    'style':  'top: 599px; height: 38px;',
+                    'colour': 'Tangerine',
+                    'title': 'CSCC63H3 LEC01',
+                    'time': '3pm', 
+                    'location': 'IC 326'
+                },
+                {
+                    'style':  'top: 679px; height: 78px;',
+                    'colour': 'Sage',
+                    'title': 'CSCC09H3 LEC01',
+                    'time': '5 – 7pm', 
+                    'location': 'IC 220'
+                },
+            ],
+            [
+                {
+                    'style':  'top: 359px; height: 118px;',
+                    'colour': 'Banana',
+                    'title': 'LGGA82Y3 LEC01',
+                    'time': '9am – 12pm', 
+                    'location': 'KW 264'
+                },
+            ]
+        ]
+    }
 }

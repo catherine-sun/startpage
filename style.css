@@ -6,10 +6,11 @@
 
 :root {
     font-family: "OCR A Std";
-    --black: 34, 33, 42;
+    --black: 16, 17, 21;
     --white: 246, 245, 242;
     --grey: 73, 71, 92;
-    --bg: 26, 26, 27;
+    --bg: 24, 25, 38;
+    --fg: 41, 44, 72;
 }
 
 body {
@@ -42,17 +43,10 @@ body {
 
     &.right {
         width: calc(100% - 380px);
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 800px) {
             display: none;
         }
     }
-}
-
-.inner-box {
-    border-radius: 16px;
-    background-color: rgb(var(--black));
-    box-shadow: 0px 0px 5px rgba(var(--black), 0.6);
-    border: 2px solid rgb(var(--black));
 }
 
 .page-wrapper {
@@ -60,7 +54,7 @@ body {
     height: 550px;
     overflow: hidden;
     position: relative;
-    border-radius: 16px;
+    border-radius: 8px;
     box-sizing: border-box;
     border: 2px solid rgb(var(--black));
 }
@@ -73,8 +67,7 @@ body {
     margin: 4px;
 
     span {
-        margin: 10px;
-        margin-top: 20px;
+        margin: 8px;
         cursor: pointer;
     }
 }
@@ -100,7 +93,7 @@ body {
     transition: color 0.4s ease-in;
     position: relative;
 
-    &.active, &:hover {
+    &.active, &:hover, &:focus {
         color: rgb(var(--accent));
 
         &::before {
@@ -124,9 +117,13 @@ body {
     transition: 0.4s ease-in;
 }
 
-div#wrapper {
-    width: 100%;
+#wrapper {
     height: 550px;
+    width: 100%;
+    border-radius: 8px;
+    border: 2px solid rgb(var(--black));
+    filter: brightness(0.85);
+    z-index: 1;
 }
 
 #greeting-wrapper {
@@ -143,12 +140,13 @@ div#wrapper {
         rgba(var(--black), 1) 90%,
         rgba(var(--black), 0) 100%
     );
+    background-color: rgb(var(--fg));
 
     opacity: 0.4;
     transition: opacity 0.3s ease-in-out;
 
     &:hover {
-        opacity: 0.8;
+        opacity: 1;
     }
 }
 
@@ -187,5 +185,40 @@ greeting-loop {
 @keyframes loop-text {
     0% {transform: translate(0%, 0%);}
     100% {transform: translate(100%, 0);}
+}
+
+.icon-button {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin: 10px;
+    display: inline-block;
+    background-color: rgba(var(--accent), 0.7);
+    border-radius: 8px;
+    opacity: 0.6;
+    padding: 10px;
+    
+    & object {
+        width: 16px;
+        height: 16px;
+    }
+    width: 16px;
+    height: 16px;
+    overflow: hidden;
+    text-overflow: clip;
+    white-space: nowrap;
+    
+    transition: all .5s ease-in-out;
+    &::after {
+        content: attr(data-text);
+        line-height: 16px;
+        vertical-align: top;
+        margin-left: 2px;
+    }
+
+    &:hover, &:focus {
+        opacity: 0.9;
+        width: 180px;
+    }
 }
 

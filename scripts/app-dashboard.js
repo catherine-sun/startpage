@@ -1,7 +1,7 @@
 class AppDashboard extends HTMLElement {
 
     load = [
-        "./styles/dashboard.css"
+        "./styles/app-dashboard.css"
     ];
 
     constructor() {

@@ -4,6 +4,7 @@
         <title>howdy</title>
         <link rel="icon" href="./assets/images/favicon.png">
         <link rel="stylesheet" href="./style.css">
+        <link rel="stylesheet" href="./styles/timetable.css">
     </head>
     <body>
         <div class="outer-box">
@@ -14,21 +15,69 @@
                 <div id="paginator"></div>
             </div>
             <div class="column right">
-                <div id="wrapper" class="inner-box">
+                <div id="wrapper">
+                    <!-- TODO: let user pick calendar -->
+                    <div class="outer">
+                        <div class="inner">
+                            <div class="header">
+                                <h2>Mon</h2>
+                                <h2>Tue</h2>
+                                <h2>Wed</h2>
+                                <h2>Thu</h2>
+                                <h2>Fri</h2>
+                            </div>
+                            <div class="grid">
+                                <div class="gridlines">
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                    <div></div>
+                                </div>
+                                <timetable-day dayindex="0"></timetable-day>
+                                <timetable-day dayindex="1"></timetable-day>
+                                <timetable-day dayindex="2"></timetable-day>
+                                <timetable-day dayindex="3"></timetable-day>
+                                <timetable-day dayindex="4"></timetable-day>
+                            </div>
+                            <div 
+                                class="icon-button"
+                                data-text="open full calendar"
+                                tabindex="0"
+                                onclick="window.open('https://calendar.google.com', '_blank')"
+                                onkeydown="handleKeyDown(event, () => window.open('https://calendar.google.com', '_blank'))"
+                            >
+                                <object type="image/svg+xml" data="./assets/images/open-external-link-icon.svg"></object>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div id="greeting-wrapper" class="inner-box">
+                <div id="greeting-wrapper">
                     <greeting-loop data-content="home"></greeting-loop>
                 </div>
             </div>
         </div>
 
+        <!-- constants -->
         <script src="./types.js"></script>
         <script src="./userconfig.js"></script>
+
+        <!-- components -->
         <script src="./scripts/page-content.js"></script>
         <script src="./scripts/app-dashboard.js"></script>
         <script src="./scripts/app-item.js"></script>
         <script src="./scripts/greeting-loop.js"></script>
         <script src="./scripts/greeting-text.js"></script>
+        <script src="./scripts/timetable-day.js"></script>
+
+        <!-- main -->
         <script src="./scripts/config.js"></script>
     </body>
 </html>

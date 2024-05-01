@@ -44,17 +44,20 @@ data.pages.forEach((_, index) => {
 
     index == page_id ? elem.classList.add("active") : null;
     elem.setAttribute("tabindex", "0");
-    elem.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key == " ") {
-            changePage(page_id, e.target.id.substr(-1));
-        }
-    })
-    paginator.appendChild(elem);
-
+    elem.addEventListener("keydown", (e) => handleKeyDown(e, () => changePage(page_id, e.target.id.substr(-1))))
     elem.addEventListener("click", () => {
         index == page_id ? null : changePage(page_id, index);
     })
+    paginator.appendChild(elem);
 })
+
+function handleKeyDown(event, action) {
+    if (event.key === 'Enter' || event.key === ' ') {
+        action();
+    } else if (event.key === 'Escape') {
+        event.target.blur();
+    }
+}
 
 const components = {
     "page-content": PageContent,
@@ -62,6 +65,7 @@ const components = {
     "app-item": AppItem,
     "greeting-loop": GreetingLoop,
     "greeting-text": GreetingText,
+    "timetable-day": TimetableDay,
 }
 
 for(const name in components) {

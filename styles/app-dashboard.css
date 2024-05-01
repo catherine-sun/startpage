@@ -26,9 +26,11 @@ div.app-icon {
     margin: 4px 0px;
     border-radius: 10px;
     background-color: rgb(var(--accent));
+    transition: all 0.2s ease-in-out;
 
-    &:hover {
+    &:hover, &:focus {
         cursor: pointer;
+        transform: scale(1.1);
     }
 
     i.mask {
