@@ -14,6 +14,10 @@ const data = {
             "github",
         ],
         wallpaper: "./assets/images/penguin-shower-101Neg.jpg",
+        artist: {
+            name: "@101Neg",
+            src: "https://www.pixiv.net/en/artworks/96769333"
+        },
         include_datetime_in_greeting: true,
         datetime_format: {
             locale: undefined,
@@ -42,6 +46,10 @@ const data = {
             "reddit",
         ],
         wallpaper: "./assets/images/wadoatsume-DENDENmuri.png",
+        artist: {
+            name: "@DENDENmuri",
+            src: "https://twitter.com/DENDENmuri/status/1729062775274831958/photo/1"
+        },
         accent: "247, 126, 91",
         include_datetime_in_greeting: false,
         greetings: [
@@ -78,6 +86,10 @@ const data = {
             "files",
         ],
         wallpaper: "./assets/images/hollowknight-mochii_lisa.jpg",
+        artist: {
+            name: "@mochii_lisa",
+            src: "https://twitter.com/mochii_lisa/status/1742626752751448357/photo/1"
+        },
         accent: "99, 192, 135",
         include_datetime_in_greeting: true,
         datetime_format: {

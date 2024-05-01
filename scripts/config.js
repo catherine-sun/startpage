@@ -1,6 +1,7 @@
 let paginator = document.getElementById("paginator");
 let page_id = data.pages.indexOf("home");
 let page_content = document.getElementById("page-content");
+let art_credit = document.getElementById("art-credit");
 
 window.addEventListener("keydown", (e) => {
     if (document.activeElement !== document.body) return;
@@ -26,7 +27,12 @@ window.addEventListener("keydown", (e) => {
 const changePage = (n1, n2) => {
     document.getElementById("page" + n1).classList.remove("active");
     document.getElementById("page" + n2).classList.add("active");
-    page_content.setAttribute("data-content", data.pages[n2]);
+    page_content.setAttribute("data-content",data.pages[n2]);
+
+    const artist = data[data.pages[n2]].artist;
+    art_credit.setAttribute("data-content", `art by ${artist.name}`);
+    art_credit.setAttribute("onclick", `window.open('${artist.src}', '_blank')`);
+    art_credit.setAttribute("onkeydown", `handleKeyDown(event, () => window.open('${artist.src}', '_blank'))`)
     page_id = n2;
 }
 
