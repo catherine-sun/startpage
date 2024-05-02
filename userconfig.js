@@ -119,6 +119,8 @@ const pages = {
     },
 }
 
+// To see changes in the calendars, local storage needs to be cleared
+// TODO: change this and let user export/save notes
 const calendars = {
     s24: [
         [],
