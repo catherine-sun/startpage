@@ -129,6 +129,7 @@ const calendars = {
                 "title": "LGGA82Y3 LEC01",
                 "time": "9am – 12pm",
                 "location": "KW 120",
+                "note": "",
             },
             {
                 "style":  "top: 479px; height: 78px;",
@@ -136,6 +137,7 @@ const calendars = {
                 "title": "CSCC63H3 LEC01",
                 "time": "12 – 2pm",
                 "location": "HL B101",
+                "note": "",
             },
             {
                 "style":  "top: 599px; height: 78px;",
@@ -143,6 +145,7 @@ const calendars = {
                 "title": "CSCC09H3 PRA0002",
                 "time": "3 – 5pm",
                 "location": "BV 473",
+                "note": "",
             },
         ],
         [
@@ -152,6 +155,7 @@ const calendars = {
                 "title": "CSCD03H3 LEC01",
                 "time": "10am – 12pm",
                 "location": "IC 200",
+                "note": "",
             },
             {
                 "style":  "top: 539px; height: 18px;",
@@ -159,6 +163,7 @@ const calendars = {
                 "title": "CSCD03H3 TUT0002",
                 "time": "1:30pm",
                 "location": "IC 308",
+                "note": "",
             },
         ],
         [
@@ -168,6 +173,7 @@ const calendars = {
                 "title": "CSCC63H3 LEC01",
                 "time": "2pm",
                 "location": "HL B101",
+                "note": "",
             },
             {
                 "style":  "top: 599px; height: 38px;",
@@ -175,6 +181,7 @@ const calendars = {
                 "title": "CSCC63H3 LEC01",
                 "time": "3pm",
                 "location": "IC 326",
+                "note": "",
             },
             {
                 "style":  "top: 679px; height: 78px;",
@@ -182,6 +189,7 @@ const calendars = {
                 "title": "CSCC09H3 LEC01",
                 "time": "5 – 7pm",
                 "location": "IC 220",
+                "note": "",
             },
         ],
         [
@@ -191,6 +199,7 @@ const calendars = {
                 "title": "LGGA82Y3 LEC01",
                 "time": "9am – 12pm",
                 "location": "KW 264",
+                "note": "",
             },
         ],
     ],

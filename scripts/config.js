@@ -25,15 +25,21 @@ window.addEventListener("keydown", (e) => {
 })
 
 const changePage = (n1, n2) => {
-    document.getElementById("page" + n1).classList.remove("active");
-    document.getElementById("page" + n2).classList.add("active");
-    page_content.setAttribute("data-content",settings.pages[n2]);
+    try {
+        document.getElementById("page" + n1).classList.remove("active");
+        document.getElementById("page" + n2).classList.add("active");
+        page_content.setAttribute("data-content", settings.pages[n2]);
 
-    const artist = pages[settings.pages[n2]].artist;
-    art_credit.setAttribute("data-content", `art by ${artist.name}`);
-    art_credit.setAttribute("onclick", `openUrl("${artist.src}")`);
-    art_credit.setAttribute("onkeydown", `handleKeyDown(event, () => openUrl("${artist.src}"))`);
-    page_id = n2;
+        const artist = pages[settings.pages[n2]].artist;
+        art_credit.setAttribute("data-content", `art by ${artist.name}`);
+        art_credit.setAttribute("onclick", `openUrl("${artist.src}")`);
+        art_credit.setAttribute("onkeydown", `handleKeyDown(event, () => openUrl("${artist.src}"))`);
+        page_id = n2;
+    } catch (e) {
+        // TODO: reproduce the error
+        debugger;
+        console.error(e.message);
+    }
 }
 
 settings.pages.forEach((_, index) => {

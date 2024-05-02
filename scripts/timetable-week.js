@@ -2,10 +2,14 @@ class TimetableWeek extends HTMLElement {
 
     constructor() {
         super();
+        this.store = new Store();
+        if (this.store.getCalendar().length === 0) {
+            this.store.setCalendar(calendars[this.getAttribute("calendar")]);
+        }
     }
 
     connectedCallback() {
-        this.calendar = calendars[this.getAttribute("calendar")];
+        this.calendar = this.store.getCalendar();
         this.innerHTML = `
             <div class="timetable-header">
                 <h2>MON</h2>
@@ -34,9 +38,25 @@ class TimetableWeek extends HTMLElement {
                 <object type="image/svg+xml" data="./assets/images/open-external-link-icon.svg"></object>
             </div>
         `;
+        this.querySelectorAll(".timetable-day").forEach((elem, day) => {
+            elem.querySelectorAll(".event").forEach((event, id) => {
+                const textarea = event.querySelector("textarea");
+                textarea.addEventListener("blur", (e) => {
+                    if (!event.contains(e.relatedTarget)) {
+                        hideTooltip(event);
+                        this.store.updateEventNote(day, id, textarea.value);
+                    }
+                    if (textarea.value) {
+                        textarea.nextElementSibling.textContent = textarea.value;
+                        textarea.nextElementSibling.classList.remove("hidden");
+                        textarea.classList.add("hidden");
+                    }
+                })
+            })
+        })
     }
 
-    buildEvent({style, colour, title, time, location}) {
+    buildEvent({style, colour, title, time, location, note}) {
         let height = style.match(/height: (\d+)px/);
         height = height ? +height[1] : 0;
         return `
@@ -44,9 +64,9 @@ class TimetableWeek extends HTMLElement {
                 tabindex="0"
                 class="event"
                 style="${style} ${timetable_colours[colour]}"
-                onclick="toggleTooltip(this)"
-                onblur="hideTooltip(this)"
-                onkeydown="handleKeyDown(event, () => toggleTooltip(this))"
+                onclick="showTooltip(this)"
+                onblur="!this.contains(event.relatedTarget) && hideTooltip(this)"
+                onkeydown="handleKeyDown(event, () => this === event.target && toggleTooltip(this))"
             >
                 <div class="event-body">
                     <strong>${title}</strong>
@@ -59,24 +79,38 @@ class TimetableWeek extends HTMLElement {
                         <div>${location}</div>
                     `}
                 </div>
-                <!-- TODO: replace placeholder text -->
                 <div class="tooltip">
-                    put something here but i'm not sure what to put so i'll just write a long sentence for now in case I want to add more stuff here later perhaps it should wrap, i'm not sure
+                    <textarea
+                        class="${note ? "hidden" : ""}"
+                        onkeydown="{
+                            if (event.key === 'Escape') return event.target.blur();
+                            if (event.key === 'Tab') {
+                                event.preventDefault();
+                                event.target.value += '\t';
+                            }
+                            event.target.style.height = 'auto';
+                            event.target.style.height = event.target.value !== '' ? event.target.scrollHeight + 'px' : '50px';
+                        }"
+                        placeholder="write something down"
+                    >${note}</textarea>
+                    <span
+                        class="${note ? "" : "hidden"}"
+                        tabindex="0"
+                        onfocus="{
+                            const textarea = this.previousElementSibling;
+                            textarea.style.height = (this.getBoundingClientRect().height - 8) + 'px';
+                            textarea.classList.remove('hidden');
+                            this.classList.add('hidden');
+                            textarea.focus();
+                            textarea.selectionStart = textarea.selectionEnd = textarea.value.length;
+                        }"
+                    >${note}</span>
                 </div>
             </div>
         `;
     }
-
 }
 
-function hideTooltip(obj) {
-    if (obj instanceof HTMLElement) {
-        obj.querySelector(".tooltip").classList.remove("active");
-    }
-}
-
-function toggleTooltip(obj) {
-    if (obj instanceof HTMLElement) {
-        obj.querySelector(".tooltip").classList.toggle("active");
-    }
-}
+function showTooltip(obj) { obj.querySelector(".tooltip").classList.add("active") }
+function hideTooltip(obj) { obj.querySelector(".tooltip").classList.remove("active"); }
+function toggleTooltip(obj) { obj.querySelector(".tooltip").classList.toggle("active"); }

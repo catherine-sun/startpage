@@ -80,7 +80,7 @@
     padding: 0px 3px;
     transition: all 0.3s ease-in-out;
 
-    &:focus, &:hover {
+    &:focus, &:hover, &:focus-within {
         border: solid 2px;
         box-shadow: 0px 0px 5px rgba(var(--black), 0.6);
         transform: scale(1.1);
@@ -112,17 +112,18 @@
 }
 
 .tooltip {
-    width: 140%;
+    width: 120%;
     min-width: 120px;
+    min-height: 50px;
     padding: 10px;
     border-radius: 5px;
     color: rgb(var(--white));
     background-color: rgb(var(--dark-grey));
-    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.8);
+    box-shadow: 0px 0px 5px rgba(var(--black), 0.8);
     font-size: 12px;
     line-height: 18px;
     opacity: 0;
-    overflow: auto;
+    overflow: hidden;
     display: none;
     transform: translate3d(0,6px,0);
     transition: all .2s .1s ease-in-out;
@@ -131,5 +132,20 @@
         display: inline-block;
         opacity: 1;
         transform: translate3d(0,0,0);
+    }
+
+    textarea, span {
+        all: unset;
+        display: inline-block;
+        width: 100%;
+        padding: 2px;
+        resize: none;
+        overflow: hidden;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+
+        &.hidden {
+            display: none;
+        }
     }
 }
