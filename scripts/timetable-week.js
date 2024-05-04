@@ -32,8 +32,8 @@ class TimetableWeek extends HTMLElement {
                 class="icon-button"
                 data-content="open full calendar"
                 tabindex="0"
-                onclick="window.open('https://calendar.google.com')"
-                onkeydown="handleKeyDown(event, () => window.open('https://calendar.google.com'))"
+                onclick="openUrl('https://calendar.google.com')"
+                onkeydown="handleKeyDown(event, () => openUrl('https://calendar.google.com'))"
             >
                 <object type="image/svg+xml" data="./assets/images/open-external-link-icon.svg"></object>
             </div>

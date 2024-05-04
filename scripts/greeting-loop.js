@@ -29,7 +29,7 @@ class GreetingLoop extends HTMLElement {
 
     getGreeting() {
         const date = new Date();
-        var greeting = "";
+        let greeting = "";
 
         if (this.config.include_datetime_in_greeting) {
             greeting += new Intl.DateTimeFormat(this.config.datetime_format.locale, this.config.datetime_format.options).format(date);

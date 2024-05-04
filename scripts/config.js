@@ -3,9 +3,18 @@ let page_id = settings.pages.indexOf("home");
 let page_content = document.getElementById("page-content");
 let art_credit = document.getElementById("art-credit");
 
+const updateArtCredit = (page) => {
+    const artist = pages[page].artist;
+    art_credit.setAttribute("data-content", `art by ${artist.name}`);
+    art_credit.setAttribute("onclick", `openUrl("${artist.src}")`);
+    art_credit.setAttribute("onkeydown", `handleKeyDown(event, () => openUrl("${artist.src}"))`);
+}
+
+updateArtCredit("home");
+
 window.addEventListener("keydown", (e) => {
     if (document.activeElement !== document.body) return;
-    var page_id2;
+    let page_id2;
     switch (e.key) {
         case "ArrowLeft":
         case "j":
@@ -16,7 +25,7 @@ window.addEventListener("keydown", (e) => {
         case "l":
         case "d":
         case " ":
-            page_id2 = page_id + 1 == settings.pages.length ? 0 : page_id + 1;
+            page_id2 = page_id + 1 === settings.pages.length ? 0 : page_id + 1;
             break;
         default:
             return;
@@ -25,25 +34,16 @@ window.addEventListener("keydown", (e) => {
 })
 
 const changePage = (n1, n2) => {
-    try {
-        document.getElementById("page" + n1).classList.remove("active");
-        document.getElementById("page" + n2).classList.add("active");
-        page_content.setAttribute("data-content", settings.pages[n2]);
-
-        const artist = pages[settings.pages[n2]].artist;
-        art_credit.setAttribute("data-content", `art by ${artist.name}`);
-        art_credit.setAttribute("onclick", `openUrl("${artist.src}")`);
-        art_credit.setAttribute("onkeydown", `handleKeyDown(event, () => openUrl("${artist.src}"))`);
-        page_id = n2;
-    } catch (e) {
-        // TODO: reproduce the error
-        debugger;
-        console.error(e.message);
-    }
+    document.activeElement.blur();
+    document.getElementById("page" + n1).classList.remove("active");
+    document.getElementById("page" + n2).classList.add("active");
+    page_content.setAttribute("data-content", settings.pages[n2]);
+    updateArtCredit(settings.pages[n2])
+    page_id = n2;
 }
 
 settings.pages.forEach((_, index) => {
-    var elem = document.createElement("span");
+    let elem = document.createElement("span");
     elem.setAttribute("id", "page" + index);
 
     if (icons[settings.pages[index]]) {
@@ -54,10 +54,10 @@ settings.pages.forEach((_, index) => {
         elem.classList.add(settings.paginator_style);
     }
 
-    index == page_id ? elem.classList.add("active") : null;
+    index === page_id ? elem.classList.add("active") : null;
     elem.setAttribute("tabindex", "0");
-    elem.addEventListener("keydown", (e) => handleKeyDown(e, () => changePage(page_id, e.target.id.substr(-1))));
-    elem.addEventListener("click", () => index == page_id ? null : changePage(page_id, index));
+    elem.addEventListener("keydown", (e) => handleKeyDown(e, () => changePage(page_id, +e.target.id.substr(-1) + 1)));
+    elem.addEventListener("click", () => index === page_id ? null : changePage(page_id, index));
     paginator.appendChild(elem);
 })
 
@@ -70,6 +70,7 @@ function handleKeyDown(event, action) {
 }
 
 function openUrl(url) {
+    document.activeElement.blur();
     settings.open_in_a_new_window ?  window.open(url) : window.location = url;
 }
 
