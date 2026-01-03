@@ -12,7 +12,7 @@ class AppItem extends HTMLElement {
         this.addEventListener("click", () => openUrl(this.url));
         this.addEventListener("keydown", (e) => handleKeyDown(e, () => openUrl(this.url)));
 
-        this.isHardcoded = this.icon.match("^\.\/assets\/images\/.*\.svg$");
+        this.isHardcoded = this.icon.match("^\.\/assets\/apps\/.*$");
     }
 
     connectedCallback() {

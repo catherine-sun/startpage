@@ -22,7 +22,7 @@ const apps = {
     },
     "acorn": {
         url: "https://www.acorn.utoronto.ca/",
-        icon: "./assets/images/acorn.svg",
+        icon: "./assets/apps/acorn.svg",
         bgcol: "rgb(220, 230, 240)",
     },
     "files": {
