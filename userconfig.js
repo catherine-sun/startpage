@@ -6,6 +6,7 @@ const settings = {
     ],
     paginator_style: paginator_item.word,
     open_in_a_new_window: true,
+    selected_calendar: "w26",
 }
 
 const pages = {
@@ -123,7 +124,9 @@ const pages = {
 // TODO: change this and let user export/save notes
 const calendars = {
     s24: [
+        // MONDAY
         [],
+        // TUESDAY
         [
             {
                 "style": "top: 359px; height: 118px;",
@@ -150,6 +153,7 @@ const calendars = {
                 "note": "",
             },
         ],
+        // WEDNESDAY
         [
             {
                 "style":  "top: 399px; height: 78px;",
@@ -168,6 +172,7 @@ const calendars = {
                 "note": "",
             },
         ],
+        // THURSDAY
         [
             {
                 "style":  "top: 559px; height: 38px;",
@@ -194,6 +199,7 @@ const calendars = {
                 "note": "",
             },
         ],
+        // FRIDAY
         [
             {
                 "style":  "top: 359px; height: 118px;",
@@ -201,6 +207,78 @@ const calendars = {
                 "title": "LGGA82Y3 LEC01",
                 "time": "9am – 12pm",
                 "location": "KW 264",
+                "note": "",
+            },
+        ],
+    ],
+    w26: [
+        // MONDAY
+        [
+            {
+                "style": "top: 438px; height: 38px;",
+                "colour": "Lavender",
+                "title": "STAC33 TUT",
+                "time": "11am – 12pm",
+                "location": "BV 498",
+                "note": "",
+            },
+        ],
+        // TUESDAY
+        [
+            {
+                "style": "top: 359px; height: 38px;",
+                "colour": "Tangerine",
+                "title": "CSCD43 TUT",
+                "time": "9am – 10am",
+                "location": "IA 3050",
+                "note": "",
+            },
+            {
+                "style": "top: 479px; height: 38px;",
+                "colour": "Lavender",
+                "title": "STAC33 LEC",
+                "time": "12pm – 1pm",
+                "location": "IC 220",
+                "note": "",
+            },
+            {
+                "style": "top: 519px; height: 78px;",
+                "colour": "Sage",
+                "title": "CSCD21 LEC",
+                "time": "1pm – 3pm",
+                "location": "IA 2150",
+                "note": "",
+            },
+        ],
+        // WEDNESDAY
+        [],
+        // THURSDAY
+        [
+            {
+                "style":  "top: 559px; height: 38px;",
+                "colour": "Lavender",
+                "title": "STAC33 LEC",
+                "time": "2pm – 3pm",
+                "location": "IC 220",
+                "note": "",
+            },
+            {
+                "style":  "top: 599px; height: 38px;",
+                "colour": "Sage",
+                "title": "CSCD21 TUT",
+                "time": "3pm – 4pm",
+                "location": "IA 2150",
+                "note": "",
+            },
+        ],
+        // FRIDAY
+        [
+            {
+                "style":  "top: 359px; height: 78px;",
+                "colour": "Tangerine",
+                "title": "CSCD43 LEC",
+                "time": "9am – 11am",
+                "location": "IA 2010",
                 "note": "",
             },
         ],

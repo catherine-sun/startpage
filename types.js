@@ -44,4 +44,5 @@ const timetable_colours = {
     "Tangerine": "background-color: rgb(255, 184, 120); border-color: rgb(207, 121, 44);",
     "Sage": "background-color: rgb(122, 231, 191); border-color: rgb(50, 180, 132);",
     "Grape": "background-color: rgb(219, 173, 255); border-color: rgb(164, 109, 207);",
+    "Lavender": "background-color: rgb(164, 189, 252); border-color: rgba(104, 131, 199, 1);"
 }
