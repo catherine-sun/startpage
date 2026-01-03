@@ -1,24 +1,14 @@
 class Store {
 
-    constructor() {
-        this.store = window.localStorage;
+    static clear() {
+        localStorage.clear();
     }
 
-    getCalendar() {
-        return JSON.parse(this.store.getItem('calendar')) || [];
+    static getNotes() {
+        return JSON.parse(localStorage.getItem('calendars_v2_notes') || '{}');
     }
 
-    setCalendar(calendar) {
-        this.store.setItem('calendar', JSON.stringify(calendar));
-    }
-
-    updateEventNote(day, id, note) {
-        const calendar = this.getCalendar();
-        calendar[day][id].note = note;
-        this.setCalendar(calendar);
-    }
-
-    clear() {
-        this.store.clear();
+    static setNotes(notes) {
+        localStorage.setItem('calendars_v2_notes', JSON.stringify(notes));
     }
 }

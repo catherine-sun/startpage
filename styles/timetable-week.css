@@ -79,6 +79,7 @@
     margin-left: 3px;
     padding: 0px 3px;
     transition: all 0.3s ease-in-out;
+    overflow: hidden;
 
     &:focus, &:hover, &:focus-within {
         border: solid 2px;
@@ -109,6 +110,11 @@
     strong {
         font-weight: bold;
     }
+}
+
+.not-short-event {
+    display: inline-flex;
+    flex-direction: column;
 }
 
 .tooltip {

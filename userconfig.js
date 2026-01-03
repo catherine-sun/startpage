@@ -6,7 +6,7 @@ const settings = {
     ],
     paginator_style: paginator_item.word,
     open_in_a_new_window: true,
-    selected_calendar: "w26",
+    selected_calendar: "s24",
 }
 
 const pages = {
@@ -120,167 +120,159 @@ const pages = {
     },
 }
 
-// To see changes in the calendars, local storage needs to be cleared
-// TODO: change this and let user export/save notes
 const calendars = {
-    s24: [
-        // MONDAY
-        [],
-        // TUESDAY
-        [
+    s24: {
+        MONDAY: [],
+        TUESDAY:
+            [
+                {
+                    title: "LGGA82 LEC",
+                    start: "09:00",
+                    minutes: "180",
+                    colour: "Banana",
+                    description: "KW 120",
+                    note: "",
+                },
+                {
+                    title: "CSCC63 LEC",
+                    start: "12:00",
+                    minutes: "120",
+                    colour: "Tangerine",
+                    description: "HL B101",
+                    note: "",
+                },
+                {
+                    title: "CSCC09 PRA",
+                    start: "15:00",
+                    minutes: "120",
+                    colour: "Sage",
+                    description: "BV 473",
+                    note: "",
+                },
+            ],
+        WEDNESDAY:
+            [
+                {
+                    title: "CSCD03H3 LEC",
+                    start: "10:00",
+                    minutes: "120",
+                    colour: "Grape",
+                    description: "IC 200",
+                    note: "",
+                },
+                {
+                    title: "CSCD03H3 TUT",
+                    start: "13:30",
+                    minutes: "15",
+                    colour: "Grape",
+                    description: "IC 308",
+                    note: "",
+                },
+            ],
+        THURSDAY:
+            [
+                {
+                    title: "CSCC63 LEC",
+                    start: "14:00",
+                    minutes: "60",
+                    colour: "Tangerine",
+                    description: "HL B101",
+                    note: "",
+                },
+                {
+                    title: "CSCC63 TUT",
+                    start: "15:00",
+                    minutes: "60",
+                    colour: "Tangerine",
+                    description: "IC 326",
+                    note: "",
+                },
+                {
+                    title: "CSCC09 LEC",
+                    start: "17:00",
+                    minutes: "120",
+                    colour: "Sage",
+                    description: "IC 220",
+                    note: "",
+                },
+            ],
+        FRIDAY:
+            [
+                {
+                    title: "LGGA82 LEC",
+                    start: "09:00",
+                    minutes: "180",
+                    colour: "Banana",
+                    description: "KW 120",
+                    note: "",
+                },
+            ],
+    },
+    w26: {
+        MON: [
             {
-                "style": "top: 359px; height: 118px;",
-                "colour": "Banana",
-                "title": "LGGA82Y3 LEC01",
-                "time": "9am – 12pm",
-                "location": "KW 120",
-                "note": "",
-            },
-            {
-                "style":  "top: 479px; height: 78px;",
-                "colour": "Tangerine",
-                "title": "CSCC63H3 LEC01",
-                "time": "12 – 2pm",
-                "location": "HL B101",
-                "note": "",
-            },
-            {
-                "style":  "top: 599px; height: 78px;",
-                "colour": "Sage",
-                "title": "CSCC09H3 PRA0002",
-                "time": "3 – 5pm",
-                "location": "BV 473",
-                "note": "",
-            },
-        ],
-        // WEDNESDAY
-        [
-            {
-                "style":  "top: 399px; height: 78px;",
-                "colour": "Grape",
-                "title": "CSCD03H3 LEC01",
-                "time": "10am – 12pm",
-                "location": "IC 200",
-                "note": "",
-            },
-            {
-                "style":  "top: 539px; height: 18px;",
-                "colour": "Grape",
-                "title": "CSCD03H3 TUT0002",
-                "time": "1:30pm",
-                "location": "IC 308",
-                "note": "",
-            },
-        ],
-        // THURSDAY
-        [
-            {
-                "style":  "top: 559px; height: 38px;",
-                "colour": "Tangerine",
-                "title": "CSCC63H3 LEC01",
-                "time": "2pm",
-                "location": "HL B101",
-                "note": "",
-            },
-            {
-                "style":  "top: 599px; height: 38px;",
-                "colour": "Tangerine",
-                "title": "CSCC63H3 LEC01",
-                "time": "3pm",
-                "location": "IC 326",
-                "note": "",
-            },
-            {
-                "style":  "top: 679px; height: 78px;",
-                "colour": "Sage",
-                "title": "CSCC09H3 LEC01",
-                "time": "5 – 7pm",
-                "location": "IC 220",
-                "note": "",
-            },
-        ],
-        // FRIDAY
-        [
-            {
-                "style":  "top: 359px; height: 118px;",
-                "colour": "Banana",
-                "title": "LGGA82Y3 LEC01",
-                "time": "9am – 12pm",
-                "location": "KW 264",
-                "note": "",
-            },
-        ],
-    ],
-    w26: [
-        // MONDAY
-        [
-            {
-                "style": "top: 438px; height: 38px;",
-                "colour": "Lavender",
-                "title": "STAC33 TUT",
-                "time": "11am – 12pm",
-                "location": "BV 498",
-                "note": "",
+                title: "STAC33 TUT",
+                start: "11:00",
+                minutes: "60",
+                colour: "Lavender",
+                description: "BV 498",
+                note: "",
             },
         ],
-        // TUESDAY
-        [
+        TUE: [
             {
-                "style": "top: 359px; height: 38px;",
-                "colour": "Tangerine",
-                "title": "CSCD43 TUT",
-                "time": "9am – 10am",
-                "location": "IA 3050",
-                "note": "",
+                title: "CSCD43 TUT",
+                start: "09:00",
+                minutes: "60",
+                colour: "Tangerine",
+                description: "IA 3050",
+                note: "",
             },
             {
-                "style": "top: 479px; height: 38px;",
-                "colour": "Lavender",
-                "title": "STAC33 LEC",
-                "time": "12pm – 1pm",
-                "location": "IC 220",
-                "note": "",
+                title: "STAC33 LEC",
+                start: "12:00",
+                minutes: "60",
+                colour: "Lavender",
+                description: "IC 220",
+                note: "",
             },
             {
-                "style": "top: 519px; height: 78px;",
-                "colour": "Sage",
-                "title": "CSCD21 LEC",
-                "time": "1pm – 3pm",
-                "location": "IA 2150",
-                "note": "",
-            },
-        ],
-        // WEDNESDAY
-        [],
-        // THURSDAY
-        [
-            {
-                "style":  "top: 559px; height: 38px;",
-                "colour": "Lavender",
-                "title": "STAC33 LEC",
-                "time": "2pm – 3pm",
-                "location": "IC 220",
-                "note": "",
-            },
-            {
-                "style":  "top: 599px; height: 38px;",
-                "colour": "Sage",
-                "title": "CSCD21 TUT",
-                "time": "3pm – 4pm",
-                "location": "IA 2150",
-                "note": "",
+                title: "CSCD21 LEC",
+                start: "13:00",
+                minutes: "120",
+                colour: "Sage",
+                description: "IA 2150",
+                note: "",
             },
         ],
-        // FRIDAY
-        [
+        WED: [],
+        THU: [
             {
-                "style":  "top: 359px; height: 78px;",
-                "colour": "Tangerine",
-                "title": "CSCD43 LEC",
-                "time": "9am – 11am",
-                "location": "IA 2010",
-                "note": "",
+                title: "STAC33 LEC",
+                start: "14:00",
+                minutes: "60",
+                colour: "Lavender",
+                description: "IC 220",
+                note: "",
+            },
+            {
+                title: "CSCD21 TUT",
+                start: "15:00",
+                minutes: "60",
+                colour: "Sage",
+                description: "IA 2150",
+                note: "",
             },
         ],
-    ],
+        FRI: [
+            {
+                title: "CSCD43 LEC",
+                start: "09:00",
+                minutes: "120",
+                colour: "Tangerine",
+                description: "IA 2010",
+                note: "",
+            },
+        ],
+    }
 }
