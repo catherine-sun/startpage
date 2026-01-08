@@ -131,7 +131,6 @@ const calendars = {
                     minutes: "180",
                     colour: "Banana",
                     description: "KW 120",
-                    note: "",
                 },
                 {
                     title: "CSCC63 LEC",
@@ -139,7 +138,6 @@ const calendars = {
                     minutes: "120",
                     colour: "Tangerine",
                     description: "HL B101",
-                    note: "",
                 },
                 {
                     title: "CSCC09 PRA",
@@ -147,7 +145,6 @@ const calendars = {
                     minutes: "120",
                     colour: "Sage",
                     description: "BV 473",
-                    note: "",
                 },
             ],
         WEDNESDAY:
@@ -158,7 +155,6 @@ const calendars = {
                     minutes: "120",
                     colour: "Grape",
                     description: "IC 200",
-                    note: "",
                 },
                 {
                     title: "CSCD03H3 TUT",
@@ -166,7 +162,6 @@ const calendars = {
                     minutes: "15",
                     colour: "Grape",
                     description: "IC 308",
-                    note: "",
                 },
             ],
         THURSDAY:
@@ -177,7 +172,6 @@ const calendars = {
                     minutes: "60",
                     colour: "Tangerine",
                     description: "HL B101",
-                    note: "",
                 },
                 {
                     title: "CSCC63 TUT",
@@ -185,7 +179,6 @@ const calendars = {
                     minutes: "60",
                     colour: "Tangerine",
                     description: "IC 326",
-                    note: "",
                 },
                 {
                     title: "CSCC09 LEC",
@@ -193,7 +186,6 @@ const calendars = {
                     minutes: "120",
                     colour: "Sage",
                     description: "IC 220",
-                    note: "",
                 },
             ],
         FRIDAY:
@@ -204,7 +196,6 @@ const calendars = {
                     minutes: "180",
                     colour: "Banana",
                     description: "KW 120",
-                    note: "",
                 },
             ],
     },
@@ -216,7 +207,6 @@ const calendars = {
                 minutes: "60",
                 colour: "Lavender",
                 description: "BV 498",
-                note: "",
             },
         ],
         TUE: [
@@ -226,7 +216,6 @@ const calendars = {
                 minutes: "60",
                 colour: "Tangerine",
                 description: "IA 3050",
-                note: "",
             },
             {
                 title: "STAC33 LEC",
@@ -234,7 +223,6 @@ const calendars = {
                 minutes: "60",
                 colour: "Lavender",
                 description: "IC 220",
-                note: "",
             },
             {
                 title: "CSCD21 LEC",
@@ -242,7 +230,6 @@ const calendars = {
                 minutes: "120",
                 colour: "Sage",
                 description: "IA 2150",
-                note: "",
             },
         ],
         WED: [],
@@ -253,7 +240,6 @@ const calendars = {
                 minutes: "60",
                 colour: "Lavender",
                 description: "IC 220",
-                note: "",
             },
             {
                 title: "CSCD21 TUT",
@@ -261,7 +247,6 @@ const calendars = {
                 minutes: "60",
                 colour: "Sage",
                 description: "IA 2150",
-                note: "",
             },
         ],
         FRI: [
@@ -271,7 +256,6 @@ const calendars = {
                 minutes: "120",
                 colour: "Tangerine",
                 description: "IA 2010",
-                note: "",
             },
         ],
     }

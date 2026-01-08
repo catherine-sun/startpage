@@ -71,7 +71,7 @@ function handleKeyDown(event, action) {
 
 function openUrl(url) {
     document.activeElement.blur();
-    settings.open_in_a_new_window ?  window.open(url) : window.location = url;
+    settings.open_in_a_new_window ? window.open(url) : window.location = url;
 }
 
 const components = {
@@ -80,8 +80,9 @@ const components = {
     "greeting-loop": GreetingLoop,
     "greeting-text": GreetingText,
     "timetable-week": TimetableWeek,
+    "timetable-event": TimetableEvent,
 }
 
-for(const name in components) {
+for (const name in components) {
     customElements.define(name, components[name]);
 }

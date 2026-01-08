@@ -4,11 +4,12 @@ class Store {
         localStorage.clear();
     }
 
-    static getNotes() {
-        return JSON.parse(localStorage.getItem('calendars_v2_notes') || '{}');
+    static getNote(key) {
+        return localStorage.getItem(key);
     }
 
-    static setNotes(notes) {
-        localStorage.setItem('calendars_v2_notes', JSON.stringify(notes));
+    static setNote(key, value) {
+        if (value && value !== "") localStorage.setItem(key, value);
+        else localStorage.removeItem(key);
     }
 }

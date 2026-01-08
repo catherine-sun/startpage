@@ -32,7 +32,7 @@
 }
 
 .timetable-day {
-    width: 20%;
+    width: calc(20% - 12px);
     height: calc(100% - 49px);
     position: absolute;
 
@@ -62,13 +62,6 @@
     &:nth-child(6) {
         left: 80%;
     }
-}
-
-.events-wrapper {
-    position: absolute;
-    height: 100%;
-    width: calc(100% - 12px);
-    top: -318px;
 }
 
 .event {
@@ -133,6 +126,9 @@
     display: none;
     transform: translate3d(0,6px,0);
     transition: all .2s .1s ease-in-out;
+    position: absolute;
+    left: 0px;
+    z-index: 9999;
 
     &.active {
         display: inline-block;
@@ -140,9 +136,10 @@
         transform: translate3d(0,0,0);
     }
 
-    textarea, span {
+    textarea {
         all: unset;
         display: inline-block;
+        height: 100%;
         width: 100%;
         padding: 2px;
         resize: none;
